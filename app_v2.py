@@ -26,7 +26,7 @@ def index():
         post_preco = Post(preco)
         db.session.add(post_nome, post_categoria, post_preco)
         db.session.commit()
-    produtos = Produtos.query.all()
+    produtos = Produto.query.all()
     return render_template('index.html', produtos=prdutos)
 
 
