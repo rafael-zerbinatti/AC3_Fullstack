@@ -1,0 +1,29 @@
+{% extends "_base.html" %}
+
+{% block content %}
+
+<div class="text-center">
+  <h1>Produtos</h1>
+</div>
+
+<br>
+
+<form action="/" method="POST">
+  <div class="form-group">
+    <input name="nome" class="form-control input-lg" type="text" placeholder="Nome do produto" required>
+    <input name="categoria" class="form-control input-lg" type="text" placeholder="Categoria do produto" required>
+    <input name="preco" class="form-control input-lg" type="text" placeholder="Preço do produto" required>
+  </div>
+  <input type="submit" class="btn btn-primary btn-lg btn-block" value="Submit">
+</form>
+
+<br>
+<hr>
+
+<div>
+  {% for produto in produtos %}
+    <h4 class="well"><strong>{{produto.nome}}</strong> - <em>{{produto.categoria}}</em> - <em>R${{produto.preço}}</em></h4>
+  {% endfor %}
+</div>
+
+{% endblock %}
