@@ -6,7 +6,7 @@ from app import db
 
 class Produto(db.Model):
 
-    __tablename__ = 'produtos'
+    __tablename__ = 'posts'
 
     id = db.Column(db.Integer, primary_key=True)
     nome = db.Column(db.String, nullable=False)
