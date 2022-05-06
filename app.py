@@ -27,7 +27,7 @@ def index():
         db.session.add(post_nome, post_categoria, post_preco)
         db.session.commit()
     produtos = Produto.query.all()
-    return render_template('index.html', produtos=prdutos)
+    return render_template('index.html', produtos=produtos)
 
 
 if __name__ == '__main__':
