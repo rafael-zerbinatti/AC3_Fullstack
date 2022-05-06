@@ -21,10 +21,8 @@ def index():
         nome = request.form['nome']
         categoria = request.form['categoria']
         preco = request.form['preco']
-        post_nome = Produto(nome)
-        post_categoria = Produto(categoria)
-        post_preco = Produto(preco)
-        db.session.add(post_nome, post_categoria, post_preco)
+        produto = Produto(nome, categoria, preco)
+        db.session.add(produto)
         db.session.commit()
     produtos = Produto.query.all()
     return render_template('index.html', produtos=produtos)
